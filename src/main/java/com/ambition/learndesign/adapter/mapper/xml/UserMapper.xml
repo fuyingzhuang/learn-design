@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ambition.learndesign.adapter.mapper.UserMapper">
+
+
+    <select id="login">
+        select *
+        from user
+        where username = #{username}
+          and password = #{password}
+    </select>
+    <insert id="register" useGeneratedKeys="true" keyProperty="id">
+        insert into user(username, password)
+        values (#{username}, #{password})
+    </insert>
+</mapper>
